@@ -1,0 +1,141 @@
+*{
+    padding:					0;
+    border:						0;
+    outline:					none;
+    
+    background:					none;
+    -moz-background-clip:		padding;
+    -webkit-background-clip:	padding-box;
+    background-clip:			padding-box;
+    -webkit-box-sizing:			border-box;
+    -moz-box-sizing:			border-box;
+    box-sizing:					border-box;
+
+    text-decoration: none;
+}
+
+nav ul,
+ul.reset{
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: none;
+}
+
+figure{
+    display: flex;
+    margin: 0;
+}
+
+img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+
+    &.circle{
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+html, body{
+    font-size: 16px;
+    font-family: Roboto;
+}
+
+
+// typography
+h1, h2, h3, h4, h5, p{
+    // max-width: 37em;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: Libre-Baskerville;
+
+    span{
+        display: block;
+        font-size: .7em;
+    }
+}
+
+h1{
+    font-weight: normal;
+}
+
+p{
+    margin: 1em auto;
+}
+
+a{
+    color: inherit;
+}
+
+
+
+.icon-par{
+    margin: 1.5em;
+    color: #393939;
+    text-align: left;
+
+    svg{
+        position: relative;
+        float:left;
+        bottom: .25em;
+
+    }
+    span{
+        display: block;
+        overflow: hidden;
+        word-break: break-word;
+    }
+}
+
+// buttons
+
+.icon{
+    height: 1.5em;
+    min-width: 1em;
+    margin-right: 8px;
+}
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-radius: 3px;
+    color: inherit;
+    // margin-bottom: 16px;
+
+    &.one{
+        background-color: #F6C038;
+        color: #ebebeb;
+    }
+    &.two{
+        border: .5px solid #393939;
+    }
+    
+    .icon{
+        height: 1.5em;
+        min-width: 1em;
+        margin-right: 8px;
+        fill: #fff;
+    }
+
+    &.whatsapp{
+        background-color: #0DC152;
+    }
+}
+
+
+
+
+

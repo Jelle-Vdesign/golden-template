@@ -1,0 +1,31 @@
+
+
+#hero{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: 
+        linear-gradient(rgba(57,57,57,0.7) 20%, rgba(30,30,30,1) 80%),
+        url(../../images/bg-img1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-color: #393939;
+
+    height: calc(100vh - 116px - 90px); // mobile: calc(100vh-headerh-navh) //desktop: calc(100vh-headerh)
+    box-shadow: 0 12px 24px rgba(0,0,0,0.40);
+
+    h1{
+        font-weight: initial;
+        font-size: calc(1.5em + 4vw);
+        padding: 4vw;
+        text-align: center;
+        color: #FFF2D1;
+        margin: 0 auto;
+    }
+    figure{
+        flex: 1;
+        height: calc(100% - 115px );
+        width: fit-content;
+        margin: 0 auto;
+        padding: 0 5vw 32px;
+    }
+}

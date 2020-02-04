@@ -1,0 +1,37 @@
+
+// all centered parents
+body > footer,
+body > section
+{
+    display: flex;
+    justify-content: center;
+
+    & > *{
+        margin: 0 auto;
+    }
+}
+
+// all direct children of sections (also footer header nav)
+
+body > header,
+section > article,
+section > figure,
+section > *:only-child,
+body > footer {
+    padding: 2rem 6.4vw 3rem 6.4vw;
+    box-sizing: content-box;
+    @media all and (min-width: 600px){
+        padding: 2rem 5vw 3rem 5vw;
+    }
+}
+
+article{
+    max-width: 37em;
+    margin: 0 auto;
+}
+
+body > nav {
+    @media all and (min-width: 600px){
+        padding: 2rem 5vw 3rem 5vw;
+    }
+}

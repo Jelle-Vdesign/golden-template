@@ -1,0 +1,75 @@
+nav{
+    background-color: #fff;
+    width: 100%;
+
+    @media all and (max-width: 600px){
+        position: fixed;
+        padding: 0;
+        bottom: 0;
+        z-index: 99;
+    }
+    a{
+        color:inherit
+    }
+}
+
+nav ul{
+    display: flex;
+}
+
+.visible-menu{
+    // display:inline-flex;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.visible-menu, .hidden-menu{
+
+    li{
+        white-space: nowrap;
+        min-width: 88px;
+        min-height: 76px; 
+    }
+
+    a, button{ 
+        display: block;
+        text-align: center;
+        padding: 8px 16px;
+
+        @media all and (max-width: 600px){
+            padding: 24px 4px;
+    
+        }
+    }
+
+    .icon{
+        display: block;
+        height: 1.5em;
+        width: 1rem;
+        // height: auto;
+        max-width: 1rem;
+        // max-height: 1rem;
+        margin: 0 auto;
+    }
+    .check-toggle{
+        white-space: nowrap;
+        min-width: 88px;
+        height: 76px;
+    }
+
+}
+
+.hidden-menu{
+    background-color: #fff;
+    flex-direction: column;
+
+    @media all and (max-width: 600px){
+        display: none;
+        position: absolute;
+        width: 100vw;
+        left: 0px;
+        bottom: 99px;
+    }
+
+}
