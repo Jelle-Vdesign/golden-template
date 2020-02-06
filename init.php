@@ -30,9 +30,13 @@ require_once realpath(__DIR__).'/config_vd.php'; // only web
 /* ==========================================================
  * autoload classes
  *  ========================================================== */
+
+$frontPath = FRNT_PATH;
+
+
 spl_autoload_register(function ($class_name)
 {
-    $frontPath  = FRNT_PATH;
+    global $frontPath;
     $v3path     = V3_PATH;
     $class_name = str_replace('\\', '/', $class_name);
 
@@ -55,6 +59,10 @@ if(isset($_SERVER["HTTP_HOST"])){
 /* ==========================================================
  * declaring global variables
  *  ========================================================== */
+$menuBlockItems = new stdClass();
+
+
+
 $checkGoogleBot = true;
 $preload        = array();
 $meta_title     = PAGETITLE;

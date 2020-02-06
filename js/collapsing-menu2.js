@@ -1,26 +1,25 @@
-
-
-const visibleMenu = document.querySelector('.visible-menu')
-const hiddenMenu = document.querySelector('.hidden-menu')
-const btn = visibleMenu.getElementsByTagName("button")[0];
+const visibleMenu = document.querySelector('.visible-menu');
+const hiddenMenu  = document.querySelector('.hidden-menu');
+const btn         = visibleMenu.getElementsByTagName("button")[0];
+// const jsButton    =
 
 const firstli = visibleMenu.firstElementChild;
 
 window.addEventListener("resize", updateList);
 
 function updateList() {
-    var hiddenItems = hiddenMenu.getElementsByTagName('li')
-    var lastLi = visibleMenu.lastElementChild.previousElementSibling;
+    let hiddenItems = hiddenMenu.getElementsByTagName('li');
+    let lastLi = visibleMenu.lastElementChild.previousElementSibling;
 
     if(detectLastOrSecondtolastWrap()){
-        console.log(lastLi, hiddenMenu.childNodes[0])
+        console.log(lastLi, hiddenMenu.childNodes[0]);
 
         hiddenMenu.insertBefore(lastLi, hiddenMenu.childNodes[0]);
         btn.style.display = "block";
     }
 
     if(hiddenItems.length > 0 && detectSpaceNewLi()){
-        var hfirstLi = hiddenMenu.firstChild;
+        let hfirstLi = hiddenMenu.firstChild;
         visibleMenu.insertBefore(hfirstLi, visibleMenu.lastElementChild);
         console.log('ik ben hier ook')
     }
@@ -29,7 +28,7 @@ function updateList() {
         btn.style.display = "none";
     }
 }
-updateList()
+updateList();
 
 function dectectWrap(lastLi){
 
@@ -39,10 +38,10 @@ function dectectWrap(lastLi){
 }
 
 function detectLastOrSecondtolastWrap(){
-    var lastChild = visibleMenu.lastElementChild;
-    var secondtolastChild = visibleMenu.lastElementChild.previousElementSibling;
+    let lastChild = visibleMenu.lastElementChild;
+    let secondtolastChild = visibleMenu.lastElementChild.previousElementSibling;
 
-    console.log(lastChild.offsetTop, firstli.offsetTop )
+    console.log(lastChild.offsetTop, firstli.offsetTop );
     if(lastChild.offsetTop > firstli.offsetTop || secondtolastChild.offsetTop > firstli.offsetTop ){
         
         return true
@@ -56,8 +55,8 @@ function placeButtonBack(){
 
 
 function detectSpaceNewLi(){
-    var ListItemCount = visibleMenu.getElementsByTagName('li').length
-    var neededWidth = ListItemCount*firstli.offsetWidth + firstli.offsetWidth
+    let ListItemCount = visibleMenu.getElementsByTagName('li').length
+    let neededWidth = ListItemCount*firstli.offsetWidth + firstli.offsetWidth
 
     if(visibleMenu.offsetWidth > neededWidth){
         return true

@@ -13,7 +13,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/views/getinfo.php');
 		<?php include_once($_SERVER['DOCUMENT_ROOT'].'/meta/tags.php'); ?>
 		<?php include_once($_SERVER['DOCUMENT_ROOT'].'/meta/crit_css.php'); ?>
 		<link rel="stylesheet" type="text/css" href="./stylesheets/css/main.min.css">
-
 	</head>
 	<body>
 		
@@ -39,7 +38,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/views/getinfo.php');
 		</footer>
 		<?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/components/whatsapp.php'); ?>
 
-        <?php// include_once($_SERVER['DOCUMENT_ROOT'].'/meta/js.php'); ?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/meta/js.php'; ?>
         <?php //include_once($_SERVER['DOCUMENT_ROOT'].'/meta/css.php'); ?>
 	</body>
 </html>

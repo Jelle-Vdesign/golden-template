@@ -71,4 +71,4 @@ if(isset($preload) && count($preload)>0) {
 <?php echo $meta_imgs; ?>
 <?php echo $meta_extra; ?>
 
-<?php echo (isset($page) && $page=='error') ? '<meta http-equiv="refresh" content="10; url=/">' : ''; ?>
+<?php echo (isset($page) && $page=='error') ? '<meta http-equiv="" content="10; url=/">' : ''; ?>

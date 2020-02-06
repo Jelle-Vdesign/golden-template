@@ -1,0 +1,28 @@
+{
+    "remotePath": "./devgm",
+    "host": "jelle.ditd.us",
+    "username": "ftp_jpp2301",
+    "password": "2%9nBv5k",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": true,
+        "extensionsToInclude": [
+            ".php", ".css", ".scss", ".js"
+        ],
+        "path": "./devgm"
+    }
+}

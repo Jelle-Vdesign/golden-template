@@ -1,5 +1,8 @@
 <?php
-$page_url = BASE_PATH.'/'.( isset($_SERVER['REQUEST_URI']) ? substr($_SERVER['REQUEST_URI'], 1) : '' ); // wordt deze gebruikt??
+/* MENU */
+$oMenBlockVw    = new \classes\General\ObjectFactory('menuBlockView');
+$menuBlockItems = $oMenBlockVw->selectMultiObject('parentMenuID ASC, menuSortIndex ASC', array('menuTypeID' =>3, 'showitem' => 1, 'languageGroupID' => $_SESSION['lnggID']));
+
 
 /* WAT IN TE LADEN */
 if(isset($_REQUEST['load']) && ($_REQUEST['load'] != '') ) {
@@ -44,7 +47,5 @@ if(isset($_REQUEST['load']) && ($_REQUEST['load'] != '') ) {
     include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/header_images.php';
 }
 
-/* MENU OPMAKEN */
-include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/nav.php';
 
 ?>
