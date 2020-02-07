@@ -60,6 +60,7 @@ if(isset($_SERVER["HTTP_HOST"])){
  * declaring global variables
  *  ========================================================== */
 $menuBlockItems = new stdClass();
+$subBlocks      = new stdClass();
 
 
 
@@ -100,6 +101,7 @@ $css_ext        = '';
 $pageImgs       = array();
 $pageVids       = array();
 $logo_file      = '';
+
 
 /* ==========================================================
  * setting global variables

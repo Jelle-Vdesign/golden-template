@@ -1,28 +1,33 @@
 <?php
 $oMenBlockVw = new \classes\General\ObjectFactory('menuBlockView');
 $oBlock      = new \classes\General\ObjectFactory('block');
+$oSubBlock   = new \classes\General\ObjectFactory('blockBlockView');
 
+/* url request */
+$load = ( isset($_REQUEST['load']) && $_REQUEST['load']) ? $_REQUEST['load'] : '';
+$url   = (isset($_REQUEST['data']) && $_REQUEST['data']) ? $_REQUEST['data'] : '';
 
 /* MENU */
 $menuBlockItems = $oMenBlockVw->selectMultiObject('parentMenuID ASC, menuSortIndex ASC', array('menuTypeID' =>3, 'showitem' => 1, 'languageGroupID' => $_SESSION['lnggID']));
 
-//e_print($_REQUEST);
+/* PAGES */
+$block = $oBlock->selectSingleObject( array('url' => array($url), 'urlOud' => array($url), 'languageGroupID' => $_SESSION['lnggID'], 'state' => 1),  '', 'or-and' );
 
+/* default value */
+$layout = 'page';
 
-/* WAT IN TE LADEN */
-if(isset($_REQUEST['load']) && ($_REQUEST['load'] != '')  && ($_REQUEST['data'] != 'home') ) {
+/* which content to load */
+if( ($load != '')  && ($url != 'home') ) {
 
-	switch($_REQUEST['load']){
-		
-		case 'page':
+    if($load == 'page') {
+        if($block->blockID == 4) {
+            $layout = 'services';
+        }
+    }
 
-		    include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/page.php';
-
-			break;
-	}
-
-}else{
-    include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/default.php';
+}else {
+    $layout = 'home';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/views/content/home.php';
 
 }
 
@@ -42,14 +47,23 @@ if(isset($_REQUEST['load']) && ($_REQUEST['load'] != '')  && ($_REQUEST['data'] 
 //    ';
 //}
 
-if($setMeta == false){
-    $meta_title = $block->seoTitle;
-    $meta_descr = $block->seoDescription;
-}
-
+//** allowed to move where need */
 if($setInsta == true) {
     include_once $_SERVER['DOCUMENT_ROOT'] . '/views/content/insta.php';
 }
+
+if($block) {
+    $meta_title = $block->seoTitle;
+    $meta_descr = $block->seoDescription;
+}
+else{
+    header("HTTP/1.0 404 Not Found");
+    $page = 'error';
+    $type = 'pagina';
+    $meta_title = ucfirst($type).' niet gevonden';
+}
+
+
 
 
 ?>
