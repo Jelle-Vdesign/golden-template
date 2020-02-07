@@ -24,13 +24,13 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/views/getinfo.php');
 		<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/components/nav.php'); ?>
 
 		<main>
-			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/home.php'); ?>
-			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/products.php'); ?>
-			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/info.php'); ?>
-			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/single-product.php'); ?>
-			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/contact.php'); ?>
+<!--			--><?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/home.php'); ?>
+<!--			--><?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/products.php'); ?>
+<!--			--><?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/info.php'); ?>
+<!--			--><?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/single-product.php'); ?>
+<!--			--><?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/contact.php'); ?>
 
-			<?php //include_once($_SERVER['DOCUMENT_ROOT'].'/views/page/'.$page.'.php'); ?>
+			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/views/layout/'.$layout.'.php'); ?>
 		</main>
 		<!-- <div class="spcr_v px120"></div> -->
 		<footer>

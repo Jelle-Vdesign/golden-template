@@ -33,7 +33,7 @@
     
     <section id="services">
 
-    <h2>wat wij doen?</h2>
+        <h2>wat wij doen?</h2>
 
         <article>
             <a href="/">

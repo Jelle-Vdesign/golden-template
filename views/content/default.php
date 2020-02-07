@@ -1,11 +1,6 @@
 <?php
-$oBlock     = new \classes\General\ObjectFactory('block');
-
-$page  = 'home';
-$block = $oBlock->selectSingleObject( array('languageGroupID' => $_SESSION['lnggID'], 'isHomepage' => 1) );
-if(!$block) {
-    $block = $oBlock->selectSingleObject( array('languageGroupID' => $_SESSION['lnggID'], 'onHomepage' => 1) );
-}
+$block  = $oBlock->selectSingleObject( array('languageGroupID' => $_SESSION['lnggID'], 'onHomepage' => 1) );
+$layout = 'home';
 
 if($block){
     $meta_title   = $block->seoTitle;
