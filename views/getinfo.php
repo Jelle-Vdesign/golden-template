@@ -9,23 +9,19 @@ $cBlock      = new \controllers\Block();
 $load = ( isset($_REQUEST['load']) && $_REQUEST['load']) ? $_REQUEST['load'] : '';
 $url  = (isset($_REQUEST['data']) && $_REQUEST['data']) ? $_REQUEST['data'] : '';
 
-/* default value */
-
-
 /* which content to load */
 if( ($load != '')  && ($url != 'home') ) {
 
-    if($load == 'product') {
-
-        $layout = 'single_product';
-
-    }elseif($load == 'page') {
+    if($load == 'page') {
 
         if($block->blockID == 4) {
             $layout = 'services';
-        }else {
+        } else {
             $layout = 'page';
         }
+    }elseif($load == 'product') {
+
+        $layout = 'single_product';
     }else {
         $layout = 'error';
     }
