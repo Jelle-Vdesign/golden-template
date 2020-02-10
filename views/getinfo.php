@@ -2,33 +2,36 @@
 $oMenBlockVw = new \classes\General\ObjectFactory('menuBlockView');
 $oBlock      = new \classes\General\ObjectFactory('block');
 $oSubBlock   = new \classes\General\ObjectFactory('blockBlockView');
+$oProduct    = new \classes\General\ObjectFactory('product');
+$cBlock      = new \controllers\Block();
 
 /* url request */
 $load = ( isset($_REQUEST['load']) && $_REQUEST['load']) ? $_REQUEST['load'] : '';
-$url   = (isset($_REQUEST['data']) && $_REQUEST['data']) ? $_REQUEST['data'] : '';
-
-/* MENU */
-$menuBlockItems = $oMenBlockVw->selectMultiObject('parentMenuID ASC, menuSortIndex ASC', array('menuTypeID' =>3, 'showitem' => 1, 'languageGroupID' => $_SESSION['lnggID']));
-
-/* PAGES */
-$block = $oBlock->selectSingleObject( array('url' => array($url), 'urlOud' => array($url), 'languageGroupID' => $_SESSION['lnggID'], 'state' => 1),  '', 'or-and' );
+$url  = (isset($_REQUEST['data']) && $_REQUEST['data']) ? $_REQUEST['data'] : '';
 
 /* default value */
-$layout = 'page';
+
 
 /* which content to load */
 if( ($load != '')  && ($url != 'home') ) {
 
-    if($load == 'page') {
+    if($load == 'product') {
+
+        $layout = 'single_product';
+
+    }elseif($load == 'page') {
+
         if($block->blockID == 4) {
             $layout = 'services';
+        }else {
+            $layout = 'page';
         }
+    }else {
+        $layout = 'error';
     }
 
 }else {
     $layout = 'home';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/views/content/home.php';
-
 }
 
 //include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/header_images.php';

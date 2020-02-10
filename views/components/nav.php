@@ -1,3 +1,6 @@
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/nav.php';
+?>
 <nav class="type1-menu">
     <ul class="visible-menu ">
 

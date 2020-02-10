@@ -61,7 +61,8 @@ if(isset($_SERVER["HTTP_HOST"])){
  *  ========================================================== */
 $menuBlockItems = new stdClass();
 $subBlocks      = new stdClass();
-
+$products       = new stdClass();
+$layout         = '';
 
 
 $checkGoogleBot = true;

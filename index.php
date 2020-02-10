@@ -12,7 +12,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/views/getinfo.php');
 	<head>
 		<?php include_once($_SERVER['DOCUMENT_ROOT'].'/meta/tags.php'); ?>
 		<?php include_once($_SERVER['DOCUMENT_ROOT'].'/meta/crit_css.php'); ?>
-		<link rel="stylesheet" type="text/css" href="./stylesheets/css/main.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo $static_path; ?>/stylesheets/css/main.min.css">
 	</head>
 	<body>
 		
