@@ -12,6 +12,9 @@ $url  = (isset($_REQUEST['data']) && $_REQUEST['data']) ? $_REQUEST['data'] : ''
 /* which content to load */
 if( ($load != '')  && ($url != 'home') ) {
 
+    $custom_query = 'AND (url = '.$url.' OR urlOud = '.$url.')';
+    $block = $oBlock->selectSingleObject(array('languageGroupID' => $_SESSION['lnggID'], 'state' => 1), '', 'and', $custom_query);
+
     if($load == 'page') {
 
         if($block->blockID == 4) {
@@ -27,9 +30,14 @@ if( ($load != '')  && ($url != 'home') ) {
     }
 
 }else {
+
+    $block = $oBlock->selectSingleObject(array('onHomepage' => 1));
+
     $layout = 'home';
 }
 
+
+//** put where needed */
 //include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/header_images.php';
 //include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/page_images.php';
 //include_once $_SERVER['DOCUMENT_ROOT'].'/views/content/block_images.php';
