@@ -12,7 +12,7 @@ $url  = (isset($_REQUEST['data']) && $_REQUEST['data']) ? $_REQUEST['data'] : ''
 /* which content to load */
 if( ($load != '')  && ($url != 'home') ) {
 
-    $custom_query = 'AND (url = '.$url.' OR urlOud = '.$url.')';
+    $custom_query = 'AND (url = "'.$url.'" OR urlOud = "'.$url.'")';
     $block = $oBlock->selectSingleObject(array('languageGroupID' => $_SESSION['lnggID'], 'state' => 1), '', 'and', $custom_query);
 
     if($load == 'page') {
