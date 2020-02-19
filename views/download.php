@@ -16,8 +16,10 @@ $downloadValid = false;
 $file_check = $oFileVw->selectSingleObject(array('fileID' => $fileID));
 if($file_check->useLogin == 1){
 	$loginCheck = $oClient->getClientInfo($_SESSION['login']['loginIdentifier']);
-	if(isset($loginCheck->clientID) && $loginCheck->clientID!=''){
-		$files = $oFileVw->selectSingleObject( array('clientGroupID' => array($_SESSION['login']['clientGroupID'], 'IS NULL'), 'fileID' => $fileID, 'useLogin' => 1), false, 'or-and' );
+	if(isset($loginCheck->clientID) && $loginCheck->clientID!='') {
+
+        $custom_query = 'AND (clientGroupID = '.$_SESSION['login']['clientGroupID'].' OR clientGroupID IS NULL)';
+        $files = $oFileVw->selectSingleObject( array('fileID' => $fileID, 'useLogin' => 1), '', 'and',  $custom_query);
 		if($files->fileID){
 			$downloadValid = true;
 			$file_name_download = $files->name;

@@ -1,2 +1,3 @@
 <?php
-$product = $oProduct->selectSingleObject(array('url' => array($url), 'urlOud' => array($url), 'languageGroupID' => $_SESSION['lnggID'], 'state' => 1), '', 'or-and');
+$custom_query = 'AND (url = '.$url.' OR urlOud = '.$url.')';
+$product = $oProduct->selectSingleObject(array('languageGroupID' => $_SESSION['lnggID'], 'state' => 1), '', 'and', $custom_query);
